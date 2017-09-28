@@ -143,4 +143,8 @@
     <!-- Name of the volte and vowifi status bar icon. -->
     <string name="status_bar_volte">VoLTE</string>
     <string name="status_bar_vowifi">VoWiFi</string>
+
+    <!-- Language toggle tile -->
+    <string name="quick_settings_locale_label">Language</string>
+    <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
 </resources>

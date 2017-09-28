@@ -41,6 +41,7 @@ import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
+import com.android.systemui.qs.tiles.LocaleTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.NfcTile;
@@ -92,6 +93,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<HeadsUpTile> mHeadsUpTileProvider;
     private final Provider<RebootTile> mRebootTileProvider;
     private final Provider<SyncTile> mSyncTileProvider;
+    private final Provider<LocaleTile> mLocaleTileProvider;
 
     private QSTileHost mHost;
 
@@ -122,7 +124,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<ScreenRecordTile> screenRecordTileProvider,
             Provider<DataSwitchTile> dataSwitchTileProvider,
             Provider<HeadsUpTile> headsUpTileProvider,
-            Provider<SyncTile> syncTileProvider) {
+            Provider<SyncTile> syncTileProvider,
+            Provider<LocaleTile> localeTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -150,6 +153,7 @@ public class QSFactoryImpl implements QSFactory {
         mHeadsUpTileProvider = headsUpTileProvider;
         mRebootTileProvider = rebootTileProvider;
         mSyncTileProvider = syncTileProvider;
+        mLocaleTileProvider = localeTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -219,6 +223,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mRebootTileProvider.get();
             case "sync":
                 return mSyncTileProvider.get();
+            case "locale":
+                return mLocaleTileProvider.get();
         }
 
         // Intent tiles.
