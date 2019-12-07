@@ -305,4 +305,10 @@
 
     <!-- Whether device supports variable refresh rate -->
     <bool name="config_hasVariableRefreshRate">false</bool>
+
+    <string-array translatable="false" name="config_customPermissionsList">
+        <item>com.google.android.apps.wellbeing</item>
+        <!-- <item>more packages</item>-->
+    </string-array>
+
 </resources>
